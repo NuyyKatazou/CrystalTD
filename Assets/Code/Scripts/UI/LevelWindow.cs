@@ -10,35 +10,9 @@ public class LevelWindow : MonoBehaviour, IDataPersistence
     [SerializeField] private TMPro.TMP_Text levelText;
     [SerializeField] private Image experienceBarImage;
 
-    private LevelSystem levelSystem;
+    public LevelSystem levelSystem;
     private int experienceNumber;
     private int expToNextLevelNumber;
-    private int test;
-
-    public void LoadData(GameData data)
-    {
-        levelSystem.level = data.level;
-    }
-
-    public void SaveData(GameData data)
-    {
-        data.level = levelSystem.level;
-    }
-
-    private void SetExperienceBarSize(float experienceNormalized)
-    {
-        experienceBarImage.fillAmount = experienceNormalized;
-    }
-
-    private void SetTextBar(int experienceNumber, int expToNextLevelNumber)
-    {
-        barText.text = experienceNumber + " / " + expToNextLevelNumber;
-    }
-
-    private void SetlevelNumber(int levelNumber)
-    {
-        levelText.text = levelNumber.ToString();
-    }
 
     public void SetLevelSystem(LevelSystem levelSystem)
     {
@@ -70,5 +44,39 @@ public class LevelWindow : MonoBehaviour, IDataPersistence
     {
         // Level changed, update text
         SetlevelNumber(levelSystem.GetLevelNumber());
+    }
+
+    public void LoadData(GameData data)
+    {
+        levelSystem.level = data.level;
+        levelSystem.experience = data.experience;
+        levelSystem.experienceToNextLevel = data.experienceToNextLevel;
+        SetlevelNumber(levelSystem.GetLevelNumber());
+        SetExperienceBarSize(levelSystem.GetExperienceNormalized());
+        experienceNumber = levelSystem.GetExperience();
+        expToNextLevelNumber = levelSystem.GetExpToNextLevel();
+        SetTextBar(experienceNumber, expToNextLevelNumber);
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.level = levelSystem.level;
+        data.experience = levelSystem.experience;
+        data.experienceToNextLevel = levelSystem.experienceToNextLevel;
+    }
+
+    private void SetExperienceBarSize(float experienceNormalized)
+    {
+        experienceBarImage.fillAmount = experienceNormalized;
+    }
+
+    private void SetTextBar(int experienceNumber, int expToNextLevelNumber)
+    {
+        barText.text = experienceNumber + " / " + expToNextLevelNumber;
+    }
+
+    private void SetlevelNumber(int levelNumber)
+    {
+        levelText.text = levelNumber.ToString();
     }
 }

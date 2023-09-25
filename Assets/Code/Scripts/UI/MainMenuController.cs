@@ -14,6 +14,7 @@ public class MainMenuController : MonoBehaviour
 
     public static bool tutorialEnd = false;
 
+    private LevelWindow levelSystem;
     public PlayMenu playMenu;
     private string version;
 
@@ -40,6 +41,11 @@ public class MainMenuController : MonoBehaviour
             playMenu.OpenPlayCanvas();
             CloseMenuCanvas();
         }
+    }
+
+    public void VersionButton()
+    {
+
     }
 
     public void ChangeScene(string _sceneName)

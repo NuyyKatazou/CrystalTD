@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : MonoBehaviour, IDataPersistence
 {
     public static LevelManager main { get; private set; }
 
@@ -21,6 +21,16 @@ public class LevelManager : MonoBehaviour
     public bool gameLose = false;
     public bool gameWin = false;
 
+    public void LoadData(GameData data)
+    {
+        currency = data.currency;
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.currency = currency;
+    }
+
     private void Awake()
     {
         main = this;
@@ -28,7 +38,6 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        currency = 100;
         gameLose = false;
         gameWin = false;
     }

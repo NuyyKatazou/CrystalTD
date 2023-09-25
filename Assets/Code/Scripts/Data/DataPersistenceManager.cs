@@ -5,8 +5,13 @@ using System.Linq;
 
 public class DataPersistenceManager : MonoBehaviour
 {
+    [Header("File Storage Config")]
+    [SerializeField] private string fileName;
+    [SerializeField] private bool useEncryption;
+
     private GameData gameData;
     private List<IDataPersistence> dataPersistenceObjects;
+    private FileDataHandler dataHandler;
 
     public static DataPersistenceManager instance { get; private set; }
 
@@ -14,13 +19,14 @@ public class DataPersistenceManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogError("Found more than ne Data Persistance Manager in the scene.");
+            Debug.Log("Found more than ne Data Persistance Manager in the scene.");
         }
         instance = this;
     }
 
     private void Start()
     {
+        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryption);
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();
     }
@@ -32,6 +38,9 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void LoadGame()
     {
+        // Load any saved data from a file using the data Handler
+        this.gameData = dataHandler.Load();
+
         // If no data can be loaded, initialize to a new game
         if (this.gameData == null)
         {
@@ -42,8 +51,6 @@ public class DataPersistenceManager : MonoBehaviour
         {
             dataPersistenceObj.LoadData(gameData);
         }
-
-        Debug.Log("Loaded level = " + gameData.level);
     }
 
     public void SaveGame()
@@ -55,7 +62,8 @@ public class DataPersistenceManager : MonoBehaviour
             dataPersistenceObj.SaveData(gameData);
         }
 
-        Debug.Log("Save level = " + gameData.level);
+        // Save that data to a file using the data handler
+        dataHandler.Save(gameData);
     }
 
     private void OnApplicationQuit()
