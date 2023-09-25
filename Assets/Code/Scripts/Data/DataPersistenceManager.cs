@@ -12,7 +12,8 @@ public class DataPersistenceManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null){
+        if (instance != null)
+        {
             Debug.LogError("Found more than ne Data Persistance Manager in the scene.");
         }
         instance = this;
@@ -32,11 +33,13 @@ public class DataPersistenceManager : MonoBehaviour
     public void LoadGame()
     {
         // If no data can be loaded, initialize to a new game
-        if (this.gameData == null){
+        if (this.gameData == null)
+        {
             Debug.Log("No data was found. Initializing data to defaults.");
             NewGame();
         }
-        foreach(IDataPersistence dataPersistenceObj in dataPersistenceObjects){
+        foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
+        {
             dataPersistenceObj.LoadData(gameData);
         }
 
@@ -47,7 +50,8 @@ public class DataPersistenceManager : MonoBehaviour
     {
         if (gameData == null) return;
 
-        foreach(IDataPersistence dataPersistenceObj in dataPersistenceObjects){
+        foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
+        {
             dataPersistenceObj.SaveData(gameData);
         }
 

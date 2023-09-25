@@ -20,7 +20,7 @@ public class Plot : MonoBehaviour
 
     private void OnMouseEnter()
     {
-     sr.color = hoverColor;
+        sr.color = hoverColor;
     }
 
     private void OnMouseExit()
@@ -34,22 +34,28 @@ public class Plot : MonoBehaviour
 
         if (LevelManager.main.gameLose != false) return;
 
-        if (towerObj != null){
-            if (turret != null){
+        if (towerObj != null)
+        {
+            if (turret != null)
+            {
                 turret.OpenUpgradeUI();
-                return;  
-            } else {
-               if (turretSlow != null){
-                    turretSlow.OpenUpgradeUI();
-                    return;  
-                } 
+                return;
             }
-            return; 
+            else
+            {
+                if (turretSlow != null)
+                {
+                    turretSlow.OpenUpgradeUI();
+                    return;
+                }
+            }
+            return;
         }
 
         Tower towerToBuild = BuildManager.main.GetSelectedTower();
 
-        if (towerToBuild.cost > LevelManager.main.currency) {
+        if (towerToBuild.cost > LevelManager.main.currency)
+        {
             Debug.Log("You can't afford this tower");
             return;
         }
@@ -61,5 +67,5 @@ public class Plot : MonoBehaviour
         turretSlow = towerObj.GetComponent<TurretSlow>();
     }
 
-    
+
 }

@@ -38,7 +38,8 @@ public class TurretSlow : MonoBehaviour
 
         timeUntilFire += Time.deltaTime;
 
-        if (timeUntilFire >= 1f / aps) {
+        if (timeUntilFire >= 1f / aps)
+        {
             FreezeEnemies();
             timeUntilFire = 0f;
         }
@@ -46,16 +47,18 @@ public class TurretSlow : MonoBehaviour
 
     private void FreezeEnemies()
     {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, (Vector2) transform.position, 0f, enemyMask);
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, (Vector2)transform.position, 0f, enemyMask);
 
-        if (hits.Length > 0){
-            for(int i = 0; i < hits.Length; i++){
-            RaycastHit2D hit = hits[i];
+        if (hits.Length > 0)
+        {
+            for (int i = 0; i < hits.Length; i++)
+            {
+                RaycastHit2D hit = hits[i];
 
-            EnemyMovement em = hit.transform.GetComponent<EnemyMovement>();
-            em.UpdateSpeed(0.75f);
+                EnemyMovement em = hit.transform.GetComponent<EnemyMovement>();
+                em.UpdateSpeed(0.75f);
 
-            StartCoroutine(ResetEnemySpeed(em));
+                StartCoroutine(ResetEnemySpeed(em));
             }
         }
     }
@@ -85,7 +88,7 @@ public class TurretSlow : MonoBehaviour
         LevelManager.main.SpendCurrency(CalculateCost());
 
         level++;
-        
+
         aps = CalculateAPS();
         targetingRange = CalculateRange();
 
@@ -109,7 +112,7 @@ public class TurretSlow : MonoBehaviour
     {
         return targetingRangeBase * Mathf.Pow(level, 0.4f);
     }
-    
+
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {

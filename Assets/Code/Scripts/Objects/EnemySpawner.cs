@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject[] enemyPrefabs;
     public VictoryMenu victoryMenu;
     public ShopMenu shopMenu;
-    
+
     [Header("Attributes")]
     [SerializeField] private int baseEnemies = 8;
     [SerializeField] private float enemiesPerSecond = 0.5f;
@@ -48,7 +48,8 @@ public class EnemySpawner : MonoBehaviour
 
         timeSinceLastSpawn += Time.deltaTime;
 
-        if (timeSinceLastSpawn >= (1f / enemiesPerSecond) && enemiesLeftToSpawn > 0){
+        if (timeSinceLastSpawn >= (1f / enemiesPerSecond) && enemiesLeftToSpawn > 0)
+        {
             SpawnEnemy();
             enemiesLeftToSpawn--;
             enemiesAlive++;
@@ -60,13 +61,15 @@ public class EnemySpawner : MonoBehaviour
             EndWave();
         }
 
-        if (currentWave == 1 && waveTimeModified == false){
+        if (currentWave == 1 && waveTimeModified == false)
+        {
             Debug.Log("TimeModified");
             timeBetweenWaves = 5f;
             waveTimeModified = true;
         }
 
-        if (currentWave == 21){
+        if (currentWave == 21)
+        {
             MainMenuController.tutorialEnd = true;
             victoryMenu.OpenVictoryCanvas();
             shopMenu.CloseShopCanvas();
@@ -84,10 +87,11 @@ public class EnemySpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(timeBetweenWaves);
 
-        if (currentWave != 21){
-        isSpawning = true;
-        enemiesLeftToSpawn = EnemiesPerWave();
-        eps = EnemiesPerSecond(); 
+        if (currentWave != 21)
+        {
+            isSpawning = true;
+            enemiesLeftToSpawn = EnemiesPerWave();
+            eps = EnemiesPerSecond();
         }
     }
 

@@ -25,20 +25,26 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Vector2.Distance(target.position, transform.position) <= 0.1f){
+        if (Vector2.Distance(target.position, transform.position) <= 0.1f)
+        {
             pathIndex++;
 
-            if (pathIndex == LevelManager.main.path.Length){
-                if (enemyObj.name == "Enemy(Clone)"){
+            if (pathIndex == LevelManager.main.path.Length)
+            {
+                if (enemyObj.name == "Enemy(Clone)")
+                {
                     LevelManager.main.playerHealth.DmgPlayer(100);
                 }
-                if (enemyObj.name == "Enemy 2(Clone)"){
+                if (enemyObj.name == "Enemy 2(Clone)")
+                {
                     LevelManager.main.playerHealth.DmgPlayer(15);
                 }
                 EnemySpawner.onEnemyDestroy.Invoke();
                 Destroy(gameObject);
                 return;
-            } else {
+            }
+            else
+            {
                 target = LevelManager.main.path[pathIndex];
             }
         }

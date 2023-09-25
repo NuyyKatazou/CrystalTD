@@ -23,18 +23,20 @@ public class MainMenuController : MonoBehaviour
 
         levelWindow.SetLevelSystem(levelSystem);
     }
-    
-        private void Start()
+
+    private void Start()
     {
         versionText.text = Application.version;
     }
 
     public void PlayButton()
     {
-        if (tutorialEnd == false){
+        if (tutorialEnd == false)
+        {
             ChangeScene("TutorialLevel");
         }
-        if (tutorialEnd == true){
+        if (tutorialEnd == true)
+        {
             playMenu.OpenPlayCanvas();
             CloseMenuCanvas();
         }

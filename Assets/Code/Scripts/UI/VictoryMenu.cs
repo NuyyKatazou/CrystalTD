@@ -11,9 +11,12 @@ public class VictoryMenu : MonoBehaviour
 
     private void Update()
     {
-        if (LevelManager.main.gameWin == true){
-        UIManager.main.SetHoveringState(true);
-        } else {
+        if (LevelManager.main.gameWin == true)
+        {
+            UIManager.main.SetHoveringState(true);
+        }
+        else
+        {
             UIManager.main.SetHoveringState(false);
         }
     }
@@ -27,7 +30,7 @@ public class VictoryMenu : MonoBehaviour
     {
         SceneManager.LoadScene(_sceneName);
     }
-    
+
     public void OpenVictoryCanvas()
     {
         victoryCanvas.SetActive(true);

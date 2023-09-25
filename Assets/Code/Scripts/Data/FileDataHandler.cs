@@ -26,7 +26,8 @@ public class FileDataHandler
         // Use Path.Combine to account for different OS's having different path separators
         string fullPath = fullPath.Combine(dataDirPath, dataFileName);
 
-        try{
+        try
+        {
             // Create the directory the file will be written to if it doesn't already exist
             Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
 
@@ -34,10 +35,11 @@ public class FileDataHandler
             string dataToStore = JsonUtility.ToJson(data, true);
 
             // Write the serialized data to the file
-            using (FileStream stream = new FileStream(fullPath, FileMode.Create)){
+            using (FileStream stream = new FileStream(fullPath, FileMode.Create))
+            {
                 using (StreamWriter writer = new StreamWriter(stream){
                     writer.Write(dataToStore);
-                })
+            })
             }
         }
 
