@@ -22,13 +22,14 @@ public class LevelSystem
     public void AddExperience(int amount)
     {
         experience += amount;
-        if (experience >= experienceToNextLevel){
+        if (experience >= experienceToNextLevel)
+        {
             // Enough experience to level up
             level++;
             experience -= experienceToNextLevel;
             if (OnLevelChanged != null) OnLevelChanged(this, EventArgs.Empty);
         }
-        if(OnExperienceChanged != null) OnExperienceChanged(this, EventArgs.Empty);
+        if (OnExperienceChanged != null) OnExperienceChanged(this, EventArgs.Empty);
     }
 
     public int GetLevelNumber()
