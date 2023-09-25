@@ -22,6 +22,7 @@ public class DataPersistenceManager : MonoBehaviour
             Debug.Log("Found more than ne Data Persistance Manager in the scene.");
         }
         instance = this;
+
     }
 
     private void Start()
