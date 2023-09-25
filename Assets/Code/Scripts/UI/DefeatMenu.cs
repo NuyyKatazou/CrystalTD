@@ -11,9 +11,12 @@ public class DefeatMenu : MonoBehaviour
 
     private void Update()
     {
-        if (LevelManager.main.gameLose == true){
-        UIManager.main.SetHoveringState(true);
-        }  else {
+        if (LevelManager.main.gameLose == true)
+        {
+            UIManager.main.SetHoveringState(true);
+        }
+        else
+        {
             UIManager.main.SetHoveringState(false);
         }
     }
@@ -27,7 +30,7 @@ public class DefeatMenu : MonoBehaviour
     {
         SceneManager.LoadScene(_sceneName);
     }
-    
+
     public void OpenDefeatCanvas()
     {
         defeatCanvas.SetActive(true);
