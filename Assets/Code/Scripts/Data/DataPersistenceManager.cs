@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class DataPersistenceManager : MonoBehaviour
 {
     [Header("Debugging")]
+    [SerializeField] private bool disableDataPersistence = false;
     [SerializeField] private bool initilizeDataIfNull = false;
 
     [Header("File Storage Config")]
@@ -29,6 +30,11 @@ public class DataPersistenceManager : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(this.gameObject);
+
+        if (disableDataPersistence)
+        {
+            Debug.LogWarning("Data Persistence is currently disabled!");
+        }
 
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryption);
     }
@@ -63,6 +69,12 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void LoadGame()
     {
+        // Return right away if data persistence is disabled
+        if (disableDataPersistence)
+        {
+            return;
+        }
+
         // Load any saved data from a file using the data Handler
         this.gameData = dataHandler.Load();
 
@@ -86,6 +98,12 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void SaveGame()
     {
+        // Return right away if data persistence is disabled
+        if (disableDataPersistence)
+        {
+            return;
+        }
+
         if (gameData == null)
         {
             Debug.LogWarning("No data was found. A New Game needs to be started before data can be saved.");
@@ -96,6 +114,8 @@ public class DataPersistenceManager : MonoBehaviour
         {
             dataPersistenceObj.SaveData(gameData);
         }
+        // Timestamp the data so we know when it was last saved
+        gameData.lastUpdated = System.DateTime.Now.ToBinary();
 
         // Save that data to a file using the data handler
         dataHandler.Save(gameData);

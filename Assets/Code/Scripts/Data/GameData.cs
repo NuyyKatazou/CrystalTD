@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
+    public long lastUpdated;
+
     public int level;
     public int experience;
     public int experienceToNextLevel;
