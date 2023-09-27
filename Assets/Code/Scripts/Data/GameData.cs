@@ -9,7 +9,9 @@ public class GameData
     public int experience;
     public int experienceToNextLevel;
 
-    public int currency;
+    public int baseCurrency;
+
+    public bool tutorialEnd;
 
     // The values defined in this constructor will be the default values
     // The game starts with when there's no data to load
@@ -19,6 +21,8 @@ public class GameData
         this.experience = 0;
         this.experienceToNextLevel = 100;
 
-        this.currency = 100;
+        this.baseCurrency = 100;
+
+        this.tutorialEnd = false;
     }
 }

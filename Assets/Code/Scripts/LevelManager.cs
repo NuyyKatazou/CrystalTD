@@ -18,17 +18,18 @@ public class LevelManager : MonoBehaviour, IDataPersistence
     public PlayerHealth playerHealth = new PlayerHealth(100, 100);
 
     public int currency;
+    public int baseCurrency;
     public bool gameLose = false;
     public bool gameWin = false;
 
     public void LoadData(GameData data)
     {
-        currency = data.currency;
+        baseCurrency = data.baseCurrency;
     }
 
     public void SaveData(GameData data)
     {
-        data.currency = currency;
+        data.baseCurrency = baseCurrency;
     }
 
     private void Awake()
@@ -38,6 +39,7 @@ public class LevelManager : MonoBehaviour, IDataPersistence
 
     private void Start()
     {
+        currency = baseCurrency;
         gameLose = false;
         gameWin = false;
     }

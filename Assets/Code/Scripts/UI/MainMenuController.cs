@@ -11,12 +11,24 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private GameObject menuCanvas;
     [SerializeField] private TMPro.TMP_Text versionText;
     [SerializeField] private LevelWindow levelWindow;
+    [SerializeField] private Button playButton;
+    [SerializeField] private Button achievementButton;
 
     public static bool tutorialEnd = false;
 
     private LevelWindow levelSystem;
     public PlayMenu playMenu;
     private string version;
+
+    public void LoadData(GameData data)
+    {
+        tutorialEnd = data.tutorialEnd;
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.tutorialEnd = tutorialEnd;
+    }
 
     private void Awake()
     {
@@ -28,12 +40,21 @@ public class MainMenuController : MonoBehaviour
     private void Start()
     {
         versionText.text = Application.version;
+        if (!DataPersistenceManager.instance.HasGameData())
+        {
+            achievementButton.interactable = false;
+        }
     }
 
     public void PlayButton()
     {
         if (tutorialEnd == false)
         {
+            DisableMenuButtons();
+            // Create a new game - wich will initialize our game data
+            DataPersistenceManager.instance.NewGame();
+            // Load the Tutorial scene - wich will turn save the game because of
+            // OnSceneUnloaded() in the DataPersistenceManager
             ChangeScene("TutorialLevel");
         }
         if (tutorialEnd == true)
@@ -43,7 +64,27 @@ public class MainMenuController : MonoBehaviour
         }
     }
 
+    public void OptionsButton()
+    {
+
+    }
+
+    public void WikiButton()
+    {
+
+    }
+
+    public void AchievementButton()
+    {
+
+    }
+
     public void VersionButton()
+    {
+
+    }
+
+    public void CreditsButton()
     {
 
     }
@@ -66,5 +107,10 @@ public class MainMenuController : MonoBehaviour
     public void CloseMenuCanvas()
     {
         menuCanvas.SetActive(false);
+    }
+
+    private void DisableMenuButtons()
+    {
+        playButton.interactable = false;
     }
 }
