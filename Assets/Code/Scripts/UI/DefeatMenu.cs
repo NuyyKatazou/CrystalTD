@@ -23,6 +23,8 @@ public class DefeatMenu : MonoBehaviour
 
     public void DefeatButton()
     {
+        // Save the game anytime before loading a new scene
+        DataPersistenceManager.instance.SaveGame();
         ChangeScene("MainMenu");
     }
 

@@ -23,6 +23,8 @@ public class VictoryMenu : MonoBehaviour
 
     public void VictoryButton()
     {
+        // Save the game anytime before loading a new scene
+        DataPersistenceManager.instance.SaveGame();
         ChangeScene("MainMenu");
     }
 
