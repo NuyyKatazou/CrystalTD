@@ -19152,6 +19152,10 @@ PrefabInstance:
       propertyPath: useEncryption
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4569583107148794585, guid: 113b82babd4c3eb4386ec3b38b3bc7e8, type: 3}
+      propertyPath: autoSaveTimeSeconds
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 4569583107148794586, guid: 113b82babd4c3eb4386ec3b38b3bc7e8, type: 3}
       propertyPath: m_Name
       value: DataPersistenceManager
