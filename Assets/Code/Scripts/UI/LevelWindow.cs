@@ -50,7 +50,6 @@ public class LevelWindow : MonoBehaviour, IDataPersistence
     {
         levelSystem.level = data.level;
         levelSystem.experience = data.experience;
-        levelSystem.experienceToNextLevel = data.experienceToNextLevel;
         SetlevelNumber(levelSystem.GetLevelNumber());
         SetExperienceBarSize(levelSystem.GetExperienceNormalized());
         experienceNumber = levelSystem.GetExperience();
@@ -62,7 +61,6 @@ public class LevelWindow : MonoBehaviour, IDataPersistence
     {
         data.level = levelSystem.level;
         data.experience = levelSystem.experience;
-        data.experienceToNextLevel = levelSystem.experienceToNextLevel;
     }
 
     private void SetExperienceBarSize(float experienceNormalized)

@@ -7,7 +7,6 @@ public class GameData
 {
     public int level;
     public int experience;
-    public int experienceToNextLevel;
 
     public int baseCurrency;
 
@@ -19,7 +18,6 @@ public class GameData
     {
         this.level = 1;
         this.experience = 0;
-        this.experienceToNextLevel = 100;
 
         this.baseCurrency = 100;
 
