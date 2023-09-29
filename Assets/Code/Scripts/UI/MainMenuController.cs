@@ -15,7 +15,10 @@ public class MainMenuController : MonoBehaviour, IDataPersistence
     [SerializeField] private Button achievementButton;
 
     private LevelWindow levelSystem;
+
     public PlayMenu playMenu;
+    public OptionsMenu optionsMenu;
+
     private string version;
 
     public bool tutorialEnd = false;
@@ -65,7 +68,7 @@ public class MainMenuController : MonoBehaviour, IDataPersistence
 
     public void OptionsButton()
     {
-
+        optionsMenu.OpenOptionsCanvas();
     }
 
     public void WikiButton()
