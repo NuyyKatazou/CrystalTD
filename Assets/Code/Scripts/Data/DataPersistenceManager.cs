@@ -8,7 +8,6 @@ public class DataPersistenceManager : MonoBehaviour
 {
     [Header("Debugging")]
     [SerializeField] private bool disableDataPersistence = false;
-    [SerializeField] private bool initilizeDataIfNull = false;
 
     [Header("File Storage Config")]
     [SerializeField] private string fileName;
@@ -29,7 +28,7 @@ public class DataPersistenceManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.Log("Found more than ne Data Persistance Manager in the scene. Destroying the newest one.");
+            Debug.Log("Found more than one Data Persistance Manager in the scene. Destroying the newest one.");
             Destroy(this.gameObject);
             return;
         }
@@ -83,17 +82,11 @@ public class DataPersistenceManager : MonoBehaviour
         // Load any saved data from a file using the data Handler
         this.gameData = dataHandler.Load();
 
-        // Start a new game if the data is null and we're configured to initialize data for debugging purposes
-        if (this.gameData == null && initilizeDataIfNull)
-        {
-            NewGame();
-        }
-
         // If no data can be loaded, initialize to a new game
         if (this.gameData == null)
         {
-            Debug.Log("No data was found. A New Game needs to be started before data can be loaded.");
-            return;
+            Debug.Log("No data was found. Initializing data to defaults.");
+            NewGame();
         }
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
@@ -111,16 +104,14 @@ public class DataPersistenceManager : MonoBehaviour
 
         if (gameData == null)
         {
-            Debug.LogWarning("No data was found. A New Game needs to be started before data can be saved.");
-            return;
+            Debug.Log("No data was found. Initializing data to defaults.");
+            NewGame();
         }
 
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
             dataPersistenceObj.SaveData(gameData);
         }
-        // Timestamp the data so we know when it was last saved
-        gameData.lastUpdated = System.DateTime.Now.ToBinary();
 
         // Save that data to a file using the data handler
         dataHandler.Save(gameData);

@@ -68,9 +68,9 @@ public class EnemySpawner : MonoBehaviour
             waveTimeModified = true;
         }
 
-        if (currentWave == 21)
+        if (currentWave == 2)
         {
-            MainMenuController.tutorialEnd = true;
+            LevelManager.main.tutorialEnd = true;
             victoryMenu.OpenVictoryCanvas();
             shopMenu.CloseShopCanvas();
             MenuUIHandler.mouse_over = true;

@@ -5,20 +5,20 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
-public class MainMenuController : MonoBehaviour
+public class MainMenuController : MonoBehaviour, IDataPersistence
 {
     [Header("References")]
-    [SerializeField] private GameObject menuCanvas;
+    [SerializeField] private GameObject menuPanel;
     [SerializeField] private TMPro.TMP_Text versionText;
     [SerializeField] private LevelWindow levelWindow;
     [SerializeField] private Button playButton;
     [SerializeField] private Button achievementButton;
 
-    public static bool tutorialEnd = false;
-
     private LevelWindow levelSystem;
     public PlayMenu playMenu;
     private string version;
+
+    public bool tutorialEnd = false;
 
     public void LoadData(GameData data)
     {
@@ -40,6 +40,7 @@ public class MainMenuController : MonoBehaviour
     private void Start()
     {
         versionText.text = Application.version;
+
         if (!DataPersistenceManager.instance.HasGameData())
         {
             achievementButton.interactable = false;
@@ -51,10 +52,8 @@ public class MainMenuController : MonoBehaviour
         if (tutorialEnd == false)
         {
             DisableMenuButtons();
-            // Create a new game - wich will initialize our game data
-            DataPersistenceManager.instance.NewGame();
             // Load the Tutorial scene - wich will turn save the game because of
-            // OnSceneUnloaded() in the DataPersistenceManager
+            // OnSceneLoaded() in the DataPersistenceManager
             ChangeScene("TutorialLevel");
         }
         if (tutorialEnd == true)
@@ -101,12 +100,12 @@ public class MainMenuController : MonoBehaviour
 
     public void OpenMenuCanvas()
     {
-        menuCanvas.SetActive(true);
+        menuPanel.SetActive(true);
     }
 
     public void CloseMenuCanvas()
     {
-        menuCanvas.SetActive(false);
+        menuPanel.SetActive(false);
     }
 
     private void DisableMenuButtons()

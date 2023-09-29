@@ -21,24 +21,37 @@ public class LevelManager : MonoBehaviour, IDataPersistence
     public int baseCurrency;
     public bool gameLose = false;
     public bool gameWin = false;
+    public bool tutorialEnd = false;
 
     public void LoadData(GameData data)
     {
         baseCurrency = data.baseCurrency;
+        tutorialEnd = data.tutorialEnd;
     }
 
     public void SaveData(GameData data)
     {
         data.baseCurrency = baseCurrency;
+        data.tutorialEnd = tutorialEnd;
     }
 
     private void Awake()
     {
+        if (main != null)
+        {
+            Destroy(this);
+            return;
+        }
+
         main = this;
     }
 
     private void Start()
     {
+        if (baseCurrency == 0)
+        {
+            baseCurrency = 100;
+        }
         currency = baseCurrency;
         gameLose = false;
         gameWin = false;
