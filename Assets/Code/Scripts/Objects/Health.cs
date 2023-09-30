@@ -7,8 +7,9 @@ public class Health : MonoBehaviour
     [Header("Attributes")]
     [SerializeField] private int hitPoints = 2;
     [SerializeField] private int currencyWorth = 50;
-    //[SerializeField] private int experienceWorth = 1;
+    [SerializeField] private int experienceWorth = 1;
 
+    private LevelManager levelManager;
     private LevelSystem levelSystem;
 
     private bool isDestroyed = false;
@@ -21,7 +22,8 @@ public class Health : MonoBehaviour
         {
             EnemySpawner.onEnemyDestroy.Invoke();
             LevelManager.main.IncreaseCurrency(currencyWorth);
-            //levelSystem.AddExperience(5);
+            LevelSystem.mainLevelSystem.AddExperience(experienceWorth);
+            Debug.Log("Experience : " + LevelSystem.mainLevelSystem.GetExperience());
             isDestroyed = true;
             Destroy(gameObject);
         }

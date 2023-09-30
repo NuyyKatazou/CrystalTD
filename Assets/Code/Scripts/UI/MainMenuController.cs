@@ -33,13 +33,6 @@ public class MainMenuController : MonoBehaviour, IDataPersistence
         data.tutorialEnd = tutorialEnd;
     }
 
-    private void Awake()
-    {
-        LevelSystem levelSystem = new LevelSystem();
-
-        levelWindow.SetLevelSystem(levelSystem);
-    }
-
     private void Start()
     {
         versionText.text = Application.version;

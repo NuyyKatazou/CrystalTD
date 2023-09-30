@@ -14,11 +14,8 @@ public class LevelWindow : MonoBehaviour, IDataPersistence
     private int experienceNumber;
     private int expToNextLevelNumber;
 
-    public void SetLevelSystem(LevelSystem levelSystem)
+    private void Awake()
     {
-        // Set the LevelSystem object
-        this.levelSystem = levelSystem;
-
         // Update the Starting values
         SetlevelNumber(levelSystem.GetLevelNumber());
         SetExperienceBarSize(levelSystem.GetExperienceNormalized());
@@ -31,25 +28,17 @@ public class LevelWindow : MonoBehaviour, IDataPersistence
         levelSystem.OnLevelChanged += LevelSystem_OnLevelChanged;
     }
 
-    private void LevelSystem_OnExperienceChanged(object sender, System.EventArgs e)
+    private void Update()
     {
-        // Experience Changed, update text and bar size
+        SetlevelNumber(levelSystem.GetLevelNumber());
         SetExperienceBarSize(levelSystem.GetExperienceNormalized());
         experienceNumber = levelSystem.GetExperience();
         expToNextLevelNumber = levelSystem.GetExpToNextLevel();
         SetTextBar(experienceNumber, expToNextLevelNumber);
     }
 
-    private void LevelSystem_OnLevelChanged(object sender, System.EventArgs e)
-    {
-        // Level changed, update text
-        SetlevelNumber(levelSystem.GetLevelNumber());
-    }
-
     public void LoadData(GameData data)
     {
-        levelSystem.level = data.level;
-        levelSystem.experience = data.experience;
         SetlevelNumber(levelSystem.GetLevelNumber());
         SetExperienceBarSize(levelSystem.GetExperienceNormalized());
         experienceNumber = levelSystem.GetExperience();
@@ -59,8 +48,7 @@ public class LevelWindow : MonoBehaviour, IDataPersistence
 
     public void SaveData(GameData data)
     {
-        data.level = levelSystem.level;
-        data.experience = levelSystem.experience;
+
     }
 
     private void SetExperienceBarSize(float experienceNormalized)
@@ -76,5 +64,22 @@ public class LevelWindow : MonoBehaviour, IDataPersistence
     private void SetlevelNumber(int levelNumber)
     {
         levelText.text = levelNumber.ToString();
+    }
+
+    private void LevelSystem_OnExperienceChanged(object sender, System.EventArgs e)
+    {
+        if (this == null) return;
+        // Experience Changed, update text and bar size
+        SetExperienceBarSize(levelSystem.GetExperienceNormalized());
+        experienceNumber = levelSystem.GetExperience();
+        expToNextLevelNumber = levelSystem.GetExpToNextLevel();
+        SetTextBar(experienceNumber, expToNextLevelNumber);
+    }
+
+    private void LevelSystem_OnLevelChanged(object sender, System.EventArgs e)
+    {
+        if (this == null) return;
+        // Level changed, update text
+        SetlevelNumber(levelSystem.GetLevelNumber());
     }
 }

@@ -16,9 +16,11 @@ public class LevelManager : MonoBehaviour, IDataPersistence
     public Transform[] path;
 
     public PlayerHealth playerHealth = new PlayerHealth(100, 100);
+    public LevelSystem levelSystem;
 
     public int currency;
     public int baseCurrency;
+    public int experience;
     public bool gameLose = false;
     public bool gameWin = false;
     public bool tutorialEnd = false;
@@ -27,18 +29,21 @@ public class LevelManager : MonoBehaviour, IDataPersistence
     {
         baseCurrency = data.baseCurrency;
         tutorialEnd = data.tutorialEnd;
+        experience = data.experience;
     }
 
     public void SaveData(GameData data)
     {
         data.baseCurrency = baseCurrency;
         data.tutorialEnd = tutorialEnd;
+        data.experience = experience;
     }
 
     private void Awake()
     {
         if (main != null)
         {
+            Debug.Log("Found more than one LevelManager in the scene. Destroying the newest one.");
             Destroy(this);
             return;
         }
