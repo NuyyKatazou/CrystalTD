@@ -17,7 +17,7 @@ public class MainMenuController : MonoBehaviour, IDataPersistence
     private LevelWindow levelSystem;
 
     public PlayMenu playMenu;
-    public OptionsMenu optionsMenu;
+    public SettingsMenu settingsMenu;
 
     private string version;
 
@@ -66,9 +66,9 @@ public class MainMenuController : MonoBehaviour, IDataPersistence
         }
     }
 
-    public void OptionsButton()
+    public void SettingsButton()
     {
-        optionsMenu.OpenOptionsCanvas();
+        settingsMenu.OpenSettingsCanvas();
     }
 
     public void WikiButton()
