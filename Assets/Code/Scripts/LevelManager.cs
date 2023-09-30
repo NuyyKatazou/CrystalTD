@@ -20,7 +20,6 @@ public class LevelManager : MonoBehaviour, IDataPersistence
 
     public int currency;
     public int baseCurrency;
-    public int experience;
     public bool gameLose = false;
     public bool gameWin = false;
     public bool tutorialEnd = false;
@@ -29,14 +28,12 @@ public class LevelManager : MonoBehaviour, IDataPersistence
     {
         baseCurrency = data.baseCurrency;
         tutorialEnd = data.tutorialEnd;
-        experience = data.experience;
     }
 
     public void SaveData(GameData data)
     {
         data.baseCurrency = baseCurrency;
         data.tutorialEnd = tutorialEnd;
-        data.experience = experience;
     }
 
     private void Awake()
