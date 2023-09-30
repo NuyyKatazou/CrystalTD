@@ -23,7 +23,6 @@ public class Health : MonoBehaviour
             EnemySpawner.onEnemyDestroy.Invoke();
             LevelManager.main.IncreaseCurrency(currencyWorth);
             LevelSystem.mainLevelSystem.AddExperience(experienceWorth);
-            Debug.Log("Experience : " + LevelSystem.mainLevelSystem.GetExperience());
             isDestroyed = true;
             Destroy(gameObject);
         }
