@@ -103,6 +103,7 @@ public class EnemySpawner : MonoBehaviour
         timeSinceLastSpawn = 0f;
         currentWave++;
         StartCoroutine(StartWave());
+        LevelSystem.mainLevelSystem.AddExperience(currentWave);
     }
 
     private void SpawnEnemy()

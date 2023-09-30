@@ -4006,10 +4006,9 @@ MonoBehaviour:
   - {fileID: 337032779}
   - {fileID: 707277716}
   - {fileID: 1073639651}
-  levelSystem: {fileID: 0}
+  levelSystem: {fileID: 1428766064}
   currency: 0
   baseCurrency: 0
-  experience: 0
   gameLose: 0
   gameWin: 0
   tutorialEnd: 0
