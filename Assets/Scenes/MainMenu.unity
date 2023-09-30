@@ -9257,7 +9257,7 @@ MonoBehaviour:
   barText: {fileID: 581612884}
   levelText: {fileID: 1114655869}
   experienceBarImage: {fileID: 193229776}
-  levelSystem: {fileID: 0}
+  levelSystem: {fileID: 323330739}
 --- !u!1 &983351121
 GameObject:
   m_ObjectHideFlags: 0

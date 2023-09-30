@@ -28,15 +28,6 @@ public class LevelWindow : MonoBehaviour, IDataPersistence
         levelSystem.OnLevelChanged += LevelSystem_OnLevelChanged;
     }
 
-    private void Update()
-    {
-        SetlevelNumber(levelSystem.GetLevelNumber());
-        SetExperienceBarSize(levelSystem.GetExperienceNormalized());
-        experienceNumber = levelSystem.GetExperience();
-        expToNextLevelNumber = levelSystem.GetExpToNextLevel();
-        SetTextBar(experienceNumber, expToNextLevelNumber);
-    }
-
     public void LoadData(GameData data)
     {
         SetlevelNumber(levelSystem.GetLevelNumber());

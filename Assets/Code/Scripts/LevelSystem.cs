@@ -28,18 +28,14 @@ public class LevelSystem : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data)
     {
-        Debug.Log("BeforeLoad. Xp Script : " + experience + " / Xp data : " + data.experience);
         this.level = data.level;
         this.experience = data.experience;
-        Debug.Log("AfterLoad. Xp Script : " + experience + " / Xp data : " + data.experience);
     }
 
     public void SaveData(GameData data)
     {
-        Debug.Log("BeforeSave. Xp Script : " + experience + " / Xp data : " + data.experience);
         data.level = this.level;
         data.experience = this.experience;
-        Debug.Log("AfterSave. Xp Script : " + experience + " / Xp data : " + data.experience);
     }
 
     public void AddExperience(int amount)
