@@ -9034,7 +9034,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1824181205}
         m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
-        m_MethodName: OptionsButton
+        m_MethodName: SettingsButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9273,7 +9273,7 @@ GameObject:
   - component: {fileID: 990589424}
   - component: {fileID: 990589428}
   m_Layer: 5
-  m_Name: OptionsCanvas
+  m_Name: SettingsCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9388,7 +9388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e636e1f9aad190449e24078b2ad7a75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsCanvas: {fileID: 0}
+  settingsCanvas: {fileID: 990589421}
 --- !u!1 &1012495664
 GameObject:
   m_ObjectHideFlags: 0
@@ -12534,7 +12534,7 @@ MonoBehaviour:
   playButton: {fileID: 1222475701}
   achievementButton: {fileID: 551332086}
   playMenu: {fileID: 28911089}
-  settingsMenu: {fileID: 0}
+  settingsMenu: {fileID: 990589428}
   tutorialEnd: 0
 --- !u!1 &1843729823
 GameObject:
