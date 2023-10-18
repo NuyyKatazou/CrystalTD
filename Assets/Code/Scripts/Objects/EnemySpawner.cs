@@ -68,7 +68,7 @@ public class EnemySpawner : MonoBehaviour
             waveTimeModified = true;
         }
 
-        if (currentWave == 2)
+        if (currentWave == 21)
         {
             LevelManager.main.tutorialEnd = true;
             victoryMenu.OpenVictoryCanvas();

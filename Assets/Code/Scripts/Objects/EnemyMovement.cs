@@ -33,7 +33,7 @@ public class EnemyMovement : MonoBehaviour
             {
                 if (enemyObj.name == "Enemy(Clone)")
                 {
-                    LevelManager.main.playerHealth.DmgPlayer(100);
+                    LevelManager.main.playerHealth.DmgPlayer(20);
                 }
                 if (enemyObj.name == "Enemy 2(Clone)")
                 {
