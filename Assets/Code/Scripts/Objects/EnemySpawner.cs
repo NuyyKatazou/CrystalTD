@@ -18,6 +18,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float enemiesPerSecond = 0.5f;
     [SerializeField] private float difficultyScalingFactor = 0.75f;
     [SerializeField] private float enemiesPerSecondCap = 15f;
+    [SerializeField] private int experienceWorth = 500;
 
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent();
@@ -75,6 +76,7 @@ public class EnemySpawner : MonoBehaviour
             shopMenu.CloseShopCanvas();
             MenuUIHandler.mouse_over = true;
             LevelManager.main.gameWin = true;
+            LevelSystem.mainLevelSystem.AddExperience(experienceWorth);
         }
     }
 
