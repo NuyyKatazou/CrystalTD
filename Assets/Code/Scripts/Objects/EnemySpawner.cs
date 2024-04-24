@@ -20,6 +20,8 @@ public class EnemySpawner : MonoBehaviour
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent();
 
+    private LevelManager levelManager;
+
     private int currentWave = 1;
     private float timeSinceLastSpawn;
     private int enemiesAlive;
@@ -103,6 +105,7 @@ public class EnemySpawner : MonoBehaviour
         currentWave++;
         StartCoroutine(StartWave());
         LevelSystem.mainLevelSystem.AddExperience(currentWave);
+        LevelManager.main.IncreaseCurrency(currentWave);
     }
 
     private void SpawnEnemy()
