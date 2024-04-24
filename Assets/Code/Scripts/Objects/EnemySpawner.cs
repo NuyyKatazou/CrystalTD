@@ -109,26 +109,21 @@ public class EnemySpawner : MonoBehaviour
     {
         if (currentWave == 1)
         {
-            int index = 0;
-            GameObject prefabToSpawn = enemyPrefabs[index];
-            Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+            RubySpawn();
             return;
+
         }
 
         if (currentWave == 2)
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -137,16 +132,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -155,16 +146,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -173,16 +160,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -191,16 +174,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -209,16 +188,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -227,16 +202,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -245,16 +216,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -263,16 +230,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -281,16 +244,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -299,16 +258,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -317,16 +272,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -335,16 +286,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -353,16 +300,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -371,16 +314,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -389,16 +328,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -407,16 +342,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -425,16 +356,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -443,16 +370,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemiesLeftToSpawn >= 3)
             {
-                int index = 0;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                RubySpawn();
                 return;
             }
             if (enemiesLeftToSpawn <= 2)
             {
-                int index = 1;
-                GameObject prefabToSpawn = enemyPrefabs[index];
-                Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+                AzuriteSpawn();
                 return;
             }
         }
@@ -461,7 +384,6 @@ public class EnemySpawner : MonoBehaviour
         {
             return;
         }
-
     }
 
     private int EnemiesPerWave()
@@ -544,5 +466,19 @@ public class EnemySpawner : MonoBehaviour
         if (currentWave == 21) { return enemiesPerSecond = enemiesPerSecond + 2.2f; }
 
         return enemiesPerSecond = enemiesPerSecond + 0.5f;
+    }
+
+    private void RubySpawn()
+    {
+        int index = 0;
+        GameObject prefabToSpawn = enemyPrefabs[index];
+        Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+    }
+
+    private void AzuriteSpawn()
+    {
+        int index = 1;
+        GameObject prefabToSpawn = enemyPrefabs[index];
+        Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
     }
 }
