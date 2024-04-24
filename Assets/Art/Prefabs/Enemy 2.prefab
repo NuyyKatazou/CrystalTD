@@ -153,5 +153,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 4
-  currencyWorth: 100
+  currencyWorth: 10
   experienceWorth: 2
