@@ -28,6 +28,11 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (other.gameObject.name == "Wall Left" || other.gameObject.name == "Wall Right" || other.gameObject.name == "Wall Top" || other.gameObject.name == "Wall Bottom")
+        {
+            Destroy(this.gameObject);
+            return;
+        }
         other.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);
         Destroy(gameObject);
     }
