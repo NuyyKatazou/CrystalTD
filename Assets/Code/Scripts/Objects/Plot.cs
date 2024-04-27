@@ -66,6 +66,4 @@ public class Plot : MonoBehaviour
         turret = towerObj.GetComponent<Turret>();
         turretSlow = towerObj.GetComponent<TurretSlow>();
     }
-
-
 }
