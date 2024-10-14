@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4314,6 +4313,7 @@ MonoBehaviour:
   shopMenu: {fileID: 780541866}
   baseEnemies: 8
   enemiesPerSecond: 0.5
+  test: 00000000
 --- !u!114 &617945468
 MonoBehaviour:
   m_ObjectHideFlags: 0
