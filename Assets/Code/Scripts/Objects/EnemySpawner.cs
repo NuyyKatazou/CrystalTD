@@ -133,7 +133,6 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-
         List<int> selectedList = waveList[currentWave - 1];
         int index = waveList[currentWave - 1][0];
         waveList[currentWave - 1].RemoveAt(0);
